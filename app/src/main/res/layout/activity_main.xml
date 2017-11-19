@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.dmb.actividad4aaccesodatos.MainActivity">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ALMACENAMIENTO EN SQLITE"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/etID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvTitle"
+        android:hint="Introduce ID para consultar"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"/>
+    
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etID"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tvAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvName"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tvCycle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvAge"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tvCourse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvCycle"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tvGradeOrOffice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvCourse"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"/>
+
+    <Button
+        android:id="@+id/addStudent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ingresar Alumno"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:onClick="addStudentSQLite"/>
+
+    <Button
+        android:id="@+id/addTeacher"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ingresar Profesor"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/addStudent"
+        android:onClick="addTeacherSQLite"/>
+
+    <Button
+        android:id="@+id/searchByID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Consultar alumno por id"
+        android:layout_below="@id/addTeacher"
+        android:onClick="searchStudentByID"/>
+
+    <Button
+        android:id="@+id/deleteByID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Borrar alumno por ID"
+        android:layout_below="@id/searchByID"/>
+
+</android.widget.RelativeLayout>

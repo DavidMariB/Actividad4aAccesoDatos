@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.dmb.actividad4aaccesodatos.AddStudentSQLite">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="INTRODUCIR ESTUDIANTE"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/tvID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvTitle"
+        android:paddingTop="20dp"
+        android:text="Identificador:"/>
+
+    <EditText
+        android:id="@+id/etID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Introduce ID"
+        android:layout_toRightOf="@+id/tvID"
+        android:layout_below="@id/tvTitle"/>
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvID"
+        android:paddingTop="20dp"
+        android:text="Nombre:"/>
+
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Introduce nombre"
+        android:layout_toRightOf="@id/tvName"
+        android:layout_below="@id/etID"/>
+
+    <TextView
+        android:id="@+id/tvAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edad:"
+        android:layout_below="@id/tvName"
+        android:paddingTop="20dp"
+        android:layout_alignBaseline="@+id/etAge"/>
+
+    <EditText
+        android:id="@+id/etAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etName"
+        android:layout_toRightOf="@+id/tvAge"
+        android:hint="Introduce edad"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/tvCycle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ciclo:"
+        android:layout_below="@+id/tvAge"
+        android:paddingTop="20dp"
+        android:layout_alignBaseline="@+id/etCycle"/>
+
+    <EditText
+        android:id="@+id/etCycle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Introduce ciclo"
+        android:layout_toRightOf="@+id/tvCycle"
+        android:layout_below="@+id/etAge"/>
+
+    <TextView
+        android:id="@+id/tvCourse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Curso:"
+        android:layout_below="@+id/tvCycle"
+        android:paddingTop="20dp"
+        android:layout_alignBaseline="@+id/etCourse"/>
+
+    <EditText
+        android:id="@+id/etCourse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Introduce curso"
+        android:layout_toRightOf="@+id/tvCourse"
+        android:layout_below="@+id/etCycle"
+        android:inputType="number"/>
+
+    <TextView
+        android:id="@+id/tvGrade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nota Media:"
+        android:layout_below="@+id/tvCourse"
+        android:paddingTop="20dp"
+        android:layout_alignBaseline="@+id/etGrade"/>
+
+    <EditText
+        android:id="@+id/etGrade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Introduce nota media"
+        android:inputType="numberDecimal"
+        android:layout_toRightOf="@+id/tvGrade"
+        android:layout_below="@+id/etCourse"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="Introducir"
+        android:layout_below="@+id/etGrade"
+        android:layout_marginTop="20dp"
+        android:onClick="addStudent"/>
+
+</android.widget.RelativeLayout>
