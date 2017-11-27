@@ -16,6 +16,9 @@ public class AdminSQLite extends SQLiteOpenHelper{
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+        System.out.println("Alucinas pepinillos con la creaçao de la base do dada");
+        db.execSQL("create table students(studentID int primary key,studentName text,studentAge int," +
+                "studentCycle text,studentCourse int,studentAverageGrade int)");
 
     }
 

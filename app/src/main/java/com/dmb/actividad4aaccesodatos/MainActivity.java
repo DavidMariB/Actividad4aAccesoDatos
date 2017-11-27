@@ -44,13 +44,10 @@ public class MainActivity extends AppCompatActivity {
         SQLiteDatabase db = admin.getWritableDatabase();
         searchID = id.getText().toString();
         Cursor fila = db.rawQuery(
-                "select * from student where studentID=" + searchID, null);
+                "select studentName,studentAge from students where studentID=" + searchID, null);
         if (fila.moveToFirst()) {
-            name.setText("Nombre: "+fila.getString(1));
-            age.setText("Edad: "+fila.getString(2));
-            cycle.setText("Ciclo: "+fila.getString(3));
-            course.setText("Curso: "+fila.getString(4));
-            gradeOffice.setText("Nota Media: "+fila.getString(5));
+            name.setText("Nombre: "+fila.getString(0));
+            age.setText("Edad: "+fila.getString(1));
         } else
             Toast.makeText(this, "No existe un estudiante con dicho ID",
                     Toast.LENGTH_SHORT).show();

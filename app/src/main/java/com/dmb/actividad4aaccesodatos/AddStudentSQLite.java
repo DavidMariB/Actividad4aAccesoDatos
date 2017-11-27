@@ -10,8 +10,8 @@ import android.widget.Toast;
 
 public class AddStudentSQLite extends AppCompatActivity {
 
-    private EditText id,name,age,cycle,course,grade;
-    private String studentID,studentName,studentAge,studentCycle,studentCourse,studentGrade;
+    private EditText id,name,age,cycle,course,averageGrade;
+    private String studentID,studentName,studentAge,studentCycle,studentCourse,studentAverageGrade;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +23,7 @@ public class AddStudentSQLite extends AppCompatActivity {
         age = findViewById(R.id.etAge);
         cycle = findViewById(R.id.etCycle);
         course = findViewById(R.id.etCourse);
-        grade = findViewById(R.id.etGrade);
+        averageGrade = findViewById(R.id.etGrade);
     }
 
     public void addStudent(View v){
@@ -34,22 +34,24 @@ public class AddStudentSQLite extends AppCompatActivity {
         studentAge = age.getText().toString();
         studentCycle = cycle.getText().toString();
         studentCourse = course.getText().toString();
-        studentGrade = grade.getText().toString();
+        studentAverageGrade = averageGrade.getText().toString();
         ContentValues cv = new ContentValues();
         cv.put("studentID",studentID);
         cv.put("studentName",studentName);
         cv.put("studentAge",studentAge);
         cv.put("studentCycle",studentCycle);
         cv.put("studentCourse",studentCourse);
-        cv.put("studentGrade",studentGrade);
-        db.insert("student",null,cv);
+        cv.put("studentAverageGrade",studentAverageGrade);
+        db.insert("students",null,cv);
         db.close();
         id.setText("");
         name.setText("");
         age.setText("");
         cycle.setText("");
         course.setText("");
-        grade.setText("");
+        averageGrade.setText("");
         Toast.makeText(this,"Estudiante añadido",Toast.LENGTH_SHORT).show();
+
+        this.finish();
     }
 }
